@@ -10,3 +10,6 @@ Importantly, it has [two write modes](https://silicondosa.github.io/circularBuff
 
 ## Learning outcomes
 This was an interesting two hour-long exercise in converting a hardware/comoputer architecture concept to software. It also helped me refresh my memory of template classes which I use here.
+
+## LICENSE
+This library is licensed under the GNU Lesser General Public License v3.
