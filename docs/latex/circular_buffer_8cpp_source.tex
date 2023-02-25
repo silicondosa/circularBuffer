@@ -1,0 +1,84 @@
+\hypertarget{circular_buffer_8cpp_source}{}\doxysection{circular\+Buffer.\+cpp}
+\label{circular_buffer_8cpp_source}\index{testing/circularBuffer/circularBuffer.cpp@{testing/circularBuffer/circularBuffer.cpp}}
+\mbox{\hyperlink{circular_buffer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00001}00001\ \textcolor{comment}{//\ circularBuffer.cpp\ :\ This\ file\ contains\ the\ 'main'\ function\ of\ the\ example.\ Program\ execution\ begins\ and\ ends\ there.}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00002}00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../../circularBuffer.h"{}}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00007}00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00008}\mbox{\hyperlink{circular_buffer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00008}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{circular_buffer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00010}00010\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Hello\ World!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{classcircular_buffer}{circularBuffer<int>}}\ b(5,\ \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464}{CBUF\_OVERWRITE}});}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00014}00014\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Buffer\ Capacity:\ "{}}\ <<\ b.\mbox{\hyperlink{classcircular_buffer_aa6e3feee15a2cb87fb8f75301ea3e039}{getCapacity}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00016}00016\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Is\ buffer\ empty?\ "{}}\ <<\ b.\mbox{\hyperlink{classcircular_buffer_a14dbd0de1f535534631899fbe36993e6}{isEmpty}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00019}00019\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insertData}}(\&a);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00021}00021\ \ \ \ \ a\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00022}00022\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insertData}}(\&a);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00024}00024\ \ \ \ \ a\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00025}00025\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insertData}}(\&a);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ c;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00028}00028\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Print\ all\ data\ points.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ i\ =\ b.\mbox{\hyperlink{classcircular_buffer_a50f44da2d5378fc3c7fb9b1fad9b8a05}{readData}}(\&c);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ cout\ <<\ c\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ i\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00032}00032\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (i\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00034}00034\ \ \ \ \ a\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00035}00035\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insertData}}(\&a);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00037}00037\ \ \ \ \ a\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00038}00038\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insertData}}(\&a);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00040}00040\ \ \ \ \ a\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00041}00041\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insertData}}(\&a);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00043}00043\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Print\ all\ data\ points.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ i\ =\ b.\mbox{\hyperlink{classcircular_buffer_a50f44da2d5378fc3c7fb9b1fad9b8a05}{readData}}(\&c);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ cout\ <<\ c\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ i\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00047}00047\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (i\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00049}00049\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Print\ first\ two\ data\ points\ only.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 2;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ i\ =\ b.\mbox{\hyperlink{classcircular_buffer_a50f44da2d5378fc3c7fb9b1fad9b8a05}{readData}}(\&c);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ cout\ <<\ c\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ i\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00055}00055\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Resetting\ reads\ before\ continuing...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00056}00056\ \ \ \ \ b.\mbox{\hyperlink{classcircular_buffer_ab9952e51495cb11a2b23733aae02bc2d}{resetRead}}();}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00058}00058\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Print\ and\ remove\ all\ data\ points.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ i\ =\ b.\mbox{\hyperlink{classcircular_buffer_a293d159233004fca34c87e306dddd236}{readRemoveData}}(\&c);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ cout\ <<\ c\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}\ <<\ i\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00062}00062\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (b.\mbox{\hyperlink{classcircular_buffer_a65b6b922b1c2cafb0bb3cbe43fa2cdf7}{getLength}}()\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00064}00064\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Is\ buffer\ empty?\ "{}}\ <<\ b.\mbox{\hyperlink{classcircular_buffer_a14dbd0de1f535534631899fbe36993e6}{isEmpty}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00069}00069\ \textcolor{comment}{//\ Run\ program:\ Ctrl\ +\ F5\ or\ Debug\ >\ Start\ Without\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00070}00070\ \textcolor{comment}{//\ Debug\ program:\ F5\ or\ Debug\ >\ Start\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00072}00072\ \textcolor{comment}{//\ Tips\ for\ Getting\ Started:\ }}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00073}00073\ \textcolor{comment}{//\ \ \ 1.\ Use\ the\ Solution\ Explorer\ window\ to\ add/manage\ files}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00074}00074\ \textcolor{comment}{//\ \ \ 2.\ Use\ the\ Team\ Explorer\ window\ to\ connect\ to\ source\ control}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00075}00075\ \textcolor{comment}{//\ \ \ 3.\ Use\ the\ Output\ window\ to\ see\ build\ output\ and\ other\ messages}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00076}00076\ \textcolor{comment}{//\ \ \ 4.\ Use\ the\ Error\ List\ window\ to\ view\ errors}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00077}00077\ \textcolor{comment}{//\ \ \ 5.\ Go\ to\ Project\ >\ Add\ New\ Item\ to\ create\ new\ code\ files,\ or\ Project\ >\ Add\ Existing\ Item\ to\ add\ existing\ code\ files\ to\ the\ project}}
+\DoxyCodeLine{\Hypertarget{circular_buffer_8cpp_source_l00078}00078\ \textcolor{comment}{//\ \ \ 6.\ In\ the\ future,\ to\ open\ this\ project\ again,\ go\ to\ File\ >\ Open\ >\ Project\ and\ select\ the\ .sln\ file}}
+
+\end{DoxyCode}

@@ -1,0 +1,78 @@
+\hypertarget{circular_buffer_8h}{}\doxysection{circular\+Buffer.\+h File Reference}
+\label{circular_buffer_8h}\index{circularBuffer.h@{circularBuffer.h}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Circular buffer class containing the data buffer itself in addition to metadata about it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{circular_buffer_8h_aad6a45fc0046e07251db9a29abf00f7e}{\+\_\+\+CIRCULARBUFFER\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551}{\+\_\+\+CIRCULARBUFFER\+\_\+\+OPMODE}} \mbox{\hyperlink{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}{circular\+Buffer\+Write\+Mode}}
+\begin{DoxyCompactList}\small\item\em One of the two possible writing modes to a \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551}{\+\_\+\+CIRCULARBUFFER\+\_\+\+OPMODE}} \{ \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464}{CBUF\+\_\+\+OVERWRITE}} = 0
+, \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11}{CBUF\+\_\+\+FILL}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em One of the two possible writing modes to a \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{circular_buffer_8h_aad6a45fc0046e07251db9a29abf00f7e}\label{circular_buffer_8h_aad6a45fc0046e07251db9a29abf00f7e}} 
+\index{circularBuffer.h@{circularBuffer.h}!\_CIRCULARBUFFER\_H@{\_CIRCULARBUFFER\_H}}
+\index{\_CIRCULARBUFFER\_H@{\_CIRCULARBUFFER\_H}!circularBuffer.h@{circularBuffer.h}}
+\doxysubsubsection{\texorpdfstring{\_CIRCULARBUFFER\_H}{\_CIRCULARBUFFER\_H}}
+{\footnotesize\ttfamily \#define \+\_\+\+CIRCULARBUFFER\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00003}{3}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}\label{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}} 
+\index{circularBuffer.h@{circularBuffer.h}!circularBufferWriteMode@{circularBufferWriteMode}}
+\index{circularBufferWriteMode@{circularBufferWriteMode}!circularBuffer.h@{circularBuffer.h}}
+\doxysubsubsection{\texorpdfstring{circularBufferWriteMode}{circularBufferWriteMode}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551}{\+\_\+\+CIRCULARBUFFER\+\_\+\+OPMODE}} \mbox{\hyperlink{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}{circular\+Buffer\+Write\+Mode}}}
+
+
+
+One of the two possible writing modes to a \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{circular_buffer_8h_a7702f4afe06244a0600711520cae3551}\label{circular_buffer_8h_a7702f4afe06244a0600711520cae3551}} 
+\index{circularBuffer.h@{circularBuffer.h}!\_CIRCULARBUFFER\_OPMODE@{\_CIRCULARBUFFER\_OPMODE}}
+\index{\_CIRCULARBUFFER\_OPMODE@{\_CIRCULARBUFFER\_OPMODE}!circularBuffer.h@{circularBuffer.h}}
+\doxysubsubsection{\texorpdfstring{\_CIRCULARBUFFER\_OPMODE}{\_CIRCULARBUFFER\_OPMODE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551}{\+\_\+\+CIRCULARBUFFER\+\_\+\+OPMODE}}}
+
+
+
+One of the two possible writing modes to a \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBUF\_OVERWRITE@{CBUF\_OVERWRITE}!circularBuffer.h@{circularBuffer.h}}\index{circularBuffer.h@{circularBuffer.h}!CBUF\_OVERWRITE@{CBUF\_OVERWRITE}}}\mbox{\Hypertarget{circular_buffer_8h_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464}\label{circular_buffer_8h_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464}} 
+CBUF\+\_\+\+OVERWRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBUF\_FILL@{CBUF\_FILL}!circularBuffer.h@{circularBuffer.h}}\index{circularBuffer.h@{circularBuffer.h}!CBUF\_FILL@{CBUF\_FILL}}}\mbox{\Hypertarget{circular_buffer_8h_a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11}\label{circular_buffer_8h_a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11}} 
+CBUF\+\_\+\+FILL&Once the buffer is full, the most stale data is deleted to make way for the newest data. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00010}{10}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+

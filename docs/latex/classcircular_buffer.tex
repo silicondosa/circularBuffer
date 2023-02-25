@@ -1,0 +1,230 @@
+\hypertarget{classcircular_buffer}{}\doxysection{circular\+Buffer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classcircular_buffer}\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+
+
+Circular buffer class containing the data buffer itself in addition to metadata about it.  
+
+
+
+
+{\ttfamily \#include $<$circular\+Buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcircular_buffer_a31cb154026a04d8ba6c95e7e39c1881a}{circular\+Buffer}} (unsigned long buffer\+Capacity, \mbox{\hyperlink{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}{circular\+Buffer\+Write\+Mode}} buffer\+Write\+Mode)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize the circular buffer object. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{classcircular_buffer_aa6e3feee15a2cb87fb8f75301ea3e039}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Returns the total number of elements/capacity of the circular buffer. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{classcircular_buffer_a65b6b922b1c2cafb0bb3cbe43fa2cdf7}{get\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of elements/length of data currently being stored in the circular buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircular_buffer_a14dbd0de1f535534631899fbe36993e6}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Returns 1 if the buffer is empty. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}{insert\+Data}} (const T $\ast$data\+Ptr)
+\begin{DoxyCompactList}\small\item\em Inserts a data item into the buffer if it isn\textquotesingle{}t at capacity. If it is, it can overwrite data if the buffer was initialized with \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464}{CBUF\+\_\+\+OVERWRITE}} write mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcircular_buffer_a50f44da2d5378fc3c7fb9b1fad9b8a05}{read\+Data}} (T $\ast$data\+Ptr)
+\begin{DoxyCompactList}\small\item\em Copies a data point from the buffer and increments the internal read pointer without deleting the data. It starts by copying the oldest data in the buffer at returns 1. In subsequent calls, it will copy more recent data until all data is copied. Then, it will reset the internal read pointer to the oldest data point and return 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircular_buffer_ab9952e51495cb11a2b23733aae02bc2d}{reset\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Resets the internal read pointer back to the oldest data point and internal read counter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcircular_buffer_a293d159233004fca34c87e306dddd236}{read\+Remove\+Data}} (T $\ast$data\+Ptr)
+\begin{DoxyCompactList}\small\item\em Copies a data point from the buffer and removes it from the buffer. Also increments the internal read pointer. It starts by copying the oldest data in the buffer at returns 1. In subsequent calls, it will copy more recent data until all data is copied. At this point, it returns 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcircular_buffer_aeb8a294132c7a5f55d9f5152716778f6}{$\sim$circular\+Buffer}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class circular\+Buffer$<$ T $>$}
+Circular buffer class containing the data buffer itself in addition to metadata about it. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Typename T is used to set the data type of the elements of the data buffer. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00020}{20}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcircular_buffer_a31cb154026a04d8ba6c95e7e39c1881a}\label{classcircular_buffer_a31cb154026a04d8ba6c95e7e39c1881a}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!circularBuffer@{circularBuffer}}
+\index{circularBuffer@{circularBuffer}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{circularBuffer()}{circularBuffer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\mbox{\hyperlink{classcircular_buffer}{\+::circular\+Buffer}} (\begin{DoxyParamCaption}\item[{unsigned long}]{buffer\+Capacity,  }\item[{\mbox{\hyperlink{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}{circular\+Buffer\+Write\+Mode}}}]{buffer\+Write\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor to initialize the circular buffer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Capacity} & Total capacity/number of elements of the buffer. \\
+\hline
+{\em buffer\+Write\+Mode} & Write mode of the buffer. Possible modes listed in \mbox{\hyperlink{circular_buffer_8h_a0a530ca3ac809a703c14e8e8c349aeee}{circular\+Buffer\+Write\+Mode}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00047}{47}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_aeb8a294132c7a5f55d9f5152716778f6}\label{classcircular_buffer_aeb8a294132c7a5f55d9f5152716778f6}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!````~circularBuffer@{$\sim$circularBuffer}}
+\index{````~circularBuffer@{$\sim$circularBuffer}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$circularBuffer()}{~circularBuffer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00164}{164}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcircular_buffer_aa6e3feee15a2cb87fb8f75301ea3e039}\label{classcircular_buffer_aa6e3feee15a2cb87fb8f75301ea3e039}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned long \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the total number of elements/capacity of the circular buffer. 
+
+\begin{DoxyReturn}{Returns}
+Total capacity of the circular buffer 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00063}{63}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_a65b6b922b1c2cafb0bb3cbe43fa2cdf7}\label{classcircular_buffer_a65b6b922b1c2cafb0bb3cbe43fa2cdf7}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!getLength@{getLength}}
+\index{getLength@{getLength}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned long \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of elements/length of data currently being stored in the circular buffer. 
+
+\begin{DoxyReturn}{Returns}
+Current length of data/number of elements in the buffer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00072}{72}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}\label{classcircular_buffer_afaa738654aeeef32eb9b47d8e536e4e3}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!insertData@{insertData}}
+\index{insertData@{insertData}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insertData()}{insertData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::insert\+Data (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts a data item into the buffer if it isn\textquotesingle{}t at capacity. If it is, it can overwrite data if the buffer was initialized with \mbox{\hyperlink{circular_buffer_8h_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464}{CBUF\+\_\+\+OVERWRITE}} write mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Ptr} & Pointer to the data that should be copied into the circular buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if successul, and 0 if not. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00090}{90}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_a14dbd0de1f535534631899fbe36993e6}\label{classcircular_buffer_a14dbd0de1f535534631899fbe36993e6}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns 1 if the buffer is empty. 
+
+\begin{DoxyReturn}{Returns}
+Returns 1 if the buffer is empty, 0 otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00081}{81}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_a50f44da2d5378fc3c7fb9b1fad9b8a05}\label{classcircular_buffer_a50f44da2d5378fc3c7fb9b1fad9b8a05}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!readData@{readData}}
+\index{readData@{readData}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{readData()}{readData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::read\+Data (\begin{DoxyParamCaption}\item[{T $\ast$}]{data\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies a data point from the buffer and increments the internal read pointer without deleting the data. It starts by copying the oldest data in the buffer at returns 1. In subsequent calls, it will copy more recent data until all data is copied. Then, it will reset the internal read pointer to the oldest data point and return 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Ptr} & Pointer to the location to which you want the data point to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if more data can be copied. Returns 0 if no more data can be uniquely copied. Returns -\/1 if the buffer is empty. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00116}{116}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_a293d159233004fca34c87e306dddd236}\label{classcircular_buffer_a293d159233004fca34c87e306dddd236}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!readRemoveData@{readRemoveData}}
+\index{readRemoveData@{readRemoveData}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{readRemoveData()}{readRemoveData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::read\+Remove\+Data (\begin{DoxyParamCaption}\item[{T $\ast$}]{data\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies a data point from the buffer and removes it from the buffer. Also increments the internal read pointer. It starts by copying the oldest data in the buffer at returns 1. In subsequent calls, it will copy more recent data until all data is copied. At this point, it returns 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Ptr} & Pointer to the location to which you want the data point to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if more data can be copied and then deleted. Returns 0 if all data has been copied and deleted. Returns -\/1 if the buffer is empty. Returns -\/2 if a no-\/delete read operation is in progress. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00147}{147}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{classcircular_buffer_ab9952e51495cb11a2b23733aae02bc2d}\label{classcircular_buffer_ab9952e51495cb11a2b23733aae02bc2d}} 
+\index{circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}!resetRead@{resetRead}}
+\index{resetRead@{resetRead}!circularBuffer$<$ T $>$@{circularBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{resetRead()}{resetRead()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classcircular_buffer}{circular\+Buffer}}$<$ T $>$\+::reset\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the internal read pointer back to the oldest data point and internal read counter. 
+
+
+
+Definition at line \mbox{\hyperlink{circular_buffer_8h_source_l00135}{135}} of file \mbox{\hyperlink{circular_buffer_8h_source}{circular\+Buffer.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{circular_buffer_8h}{circular\+Buffer.\+h}}\end{DoxyCompactItemize}
