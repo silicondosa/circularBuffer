@@ -25,6 +25,8 @@
 var NAVTREE =
 [
   [ "circularBuffer", "index.html", [
+    [ "Documentation", "index.html#autotoc_md1", null ],
+    [ "Learning outcomes", "index.html#autotoc_md2", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

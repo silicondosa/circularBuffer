@@ -116,7 +116,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a0a530ca3ac809a703c14e8e8c349aeee"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">_CIRCULARBUFFER_OPMODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a></td></tr>
-<tr class="memdesc:a0a530ca3ac809a703c14e8e8c349aeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a>.  <br /></td></tr>
+<tr class="memdesc:a0a530ca3ac809a703c14e8e8c349aeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a> object.  <br /></td></tr>
 <tr class="separator:a0a530ca3ac809a703c14e8e8c349aeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -124,7 +124,7 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a7702f4afe06244a0600711520cae3551"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">_CIRCULARBUFFER_OPMODE</a> { <a class="el" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">CBUF_OVERWRITE</a> = 0
 , <a class="el" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a> = 1
  }</td></tr>
-<tr class="memdesc:a7702f4afe06244a0600711520cae3551"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a>.  <a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">More...</a><br /></td></tr>
+<tr class="memdesc:a7702f4afe06244a0600711520cae3551"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a> object.  <a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">More...</a><br /></td></tr>
 <tr class="separator:a7702f4afe06244a0600711520cae3551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -157,7 +157,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a>. </p>
+<p>One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a> object. </p>
 
 </div>
 </div>
@@ -174,10 +174,11 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a>. </p>
+<p>One of the two possible writing modes to a <a class="el" href="classcircular_buffer.html">circularBuffer</a> object. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464" name="a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464"></a>CBUF_OVERWRITE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11" name="a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11"></a>CBUF_FILL&#160;</td><td class="fielddoc"><p>Once the buffer is full, the most stale data is deleted to make way for the newest data. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464" name="a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464"></a>CBUF_OVERWRITE&#160;</td><td class="fielddoc"><p>Once the buffer is full, the most stale data is deleted to make way for the newest data. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11" name="a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11"></a>CBUF_FILL&#160;</td><td class="fielddoc"><p>Once the buffer is full, it will not allow further writing to the buffer until data is removed. </p>
 </td></tr>
 </table>
 

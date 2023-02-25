@@ -5,11 +5,13 @@
 #include <cstdlib>
 
 /**
- * @brief One of the two possible writing modes to a \ref circularBuffer.
+ * @brief One of the two possible writing modes to a \ref circularBuffer object.
 */
 typedef enum _CIRCULARBUFFER_OPMODE {
-	CBUF_OVERWRITE = 0, /*! Once the buffer is full, the most stale data is deleted to make way for the newest data.*/
-	CBUF_FILL	  = 1  /*! Once the buffer is full, it will not allow further writing to the buffer until data is removed.*/
+	/*! Once the buffer is full, the most stale data is deleted to make way for the newest data.*/
+	CBUF_OVERWRITE	= 0,
+	/*! Once the buffer is full, it will not allow further writing to the buffer until data is removed.*/
+	CBUF_FILL		= 1
 }circularBufferWriteMode;
 
 /**

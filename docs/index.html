@@ -93,7 +93,15 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title"><a class="el" href="classcircular_buffer.html" title="Circular buffer class containing the data buffer itself in addition to metadata about it.">circularBuffer</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a>A simple header-only C++11 circular buffer implementation </p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a>This library features a simple header-only C++11 circular buffer implementation which I enjoyed using when developing hardware. As the <a href="https://en.wikipedia.org/wiki/Circular_buffer">Wikipedia entry</a> for it suggests, circular buffers are useful when storing data streams with a constant amount of memory.</p>
+<p>All you need to do to use this library is include the header file <code><a class="el" href="circular_buffer_8h.html">circularBuffer.h</a></code> in the root directory and you're set!</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Documentation</h1>
+<p>DoxyGen documentation for this library is available <a href="https://silicondosa.github.io/circularBuffer/">here</a>. You can also find an <a href="https://silicondosa.github.io/circularBuffer/circular_buffer_8cpp_source.html">example here</a>.</p>
+<p>Importantly, it has <a href="https://silicondosa.github.io/circularBuffer/circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">two write modes</a>. The <code>CBUF_FILL</code> write mode stops data storage when the buffer is full as is typical in hardware. However, I've implemented a second write mode <code>CBUF_OVERWRITE</code> which overwrites the most stale data in the buffer with the newest data point. This yeilds a sliding window effect on the data stream&mdash;this is useful in real-time streaming applications.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Learning outcomes</h1>
+<p>This was an interesting two hour-long exercise in converting a hardware/comoputer architecture concept to software. It also helped me refresh my memory of template classes which I use here. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

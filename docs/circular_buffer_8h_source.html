@@ -100,138 +100,138 @@ $(document).ready(function(){initNavTree('circular_buffer_8h_source.html',''); i
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">   10</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">_CIRCULARBUFFER_OPMODE</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">   11</a></span>    <a class="code hl_enumvalue" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">CBUF_OVERWRITE</a> = 0, </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_enumvalue" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a>     = 1  </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">   13</a></span>}<a class="code hl_typedef" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classcircular_buffer.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classcircular_buffer.html">circularBuffer</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    T* buffer; </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> capacity; </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> length; </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_typedef" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a> writeMode; </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> rdPtr; </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> rdPtrTemp; </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> rdCounter; </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> wrPtr; </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> incrementPtr(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>&amp; ptr)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span> (capacity - (ptr) &gt; 1) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            ptr++;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            ptr = 0;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a31cb154026a04d8ba6c95e7e39c1881a">   47</a></span>    <a class="code hl_function" href="classcircular_buffer.html#a31cb154026a04d8ba6c95e7e39c1881a">circularBuffer</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> bufferCapacity, <a class="code hl_typedef" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a> bufferWriteMode)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        buffer      = (T*) malloc(<span class="keyword">sizeof</span>(T) * bufferCapacity);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        capacity    = bufferCapacity;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        length      = 0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        writeMode   = bufferWriteMode;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        rdPtr       = 0;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        rdPtrTemp   = 0;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        rdCounter   = 0;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        wrPtr       = 0;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#aa6e3feee15a2cb87fb8f75301ea3e039">   63</a></span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classcircular_buffer.html#aa6e3feee15a2cb87fb8f75301ea3e039">getCapacity</a>()</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> capacity;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a65b6b922b1c2cafb0bb3cbe43fa2cdf7">   72</a></span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classcircular_buffer.html#a65b6b922b1c2cafb0bb3cbe43fa2cdf7">getLength</a>()</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> length;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">   81</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">isEmpty</a>() {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> (length == 0) ? 1 : 0;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#afaa738654aeeef32eb9b47d8e536e4e3">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcircular_buffer.html#afaa738654aeeef32eb9b47d8e536e4e3">insertData</a>(<span class="keyword">const</span> T* dataPtr)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span> (length == capacity) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (writeMode == <a class="code hl_enumvalue" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a>) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            incrementPtr(rdPtrTemp);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">if</span> (rdCounter == 0) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                rdPtr = rdPtrTemp;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            length++;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        buffer[wrPtr] = *dataPtr;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        incrementPtr(wrPtr);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a50f44da2d5378fc3c7fb9b1fad9b8a05">  116</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcircular_buffer.html#a50f44da2d5378fc3c7fb9b1fad9b8a05">readData</a>(T* dataPtr)</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">isEmpty</a>()) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        *dataPtr = buffer[rdPtr];</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">if</span> (++rdCounter == length) {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <a class="code hl_function" href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">resetRead</a>();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            incrementPtr(rdPtr);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">  135</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">resetRead</a>()</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        rdPtr = rdPtrTemp;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        rdCounter = 0;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a293d159233004fca34c87e306dddd236">  147</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcircular_buffer.html#a293d159233004fca34c87e306dddd236">readRemoveData</a>(T* dataPtr)</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">isEmpty</a>()) {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        }</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rdPtr != rdPtrTemp) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">return</span> -2;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        *dataPtr == buffer[rdPtr];</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        incrementPtr(rdPtr);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        rdPtrTemp = rdPtr;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (--length == 0) {</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#aeb8a294132c7a5f55d9f5152716778f6">  164</a></span>    <a class="code hl_function" href="classcircular_buffer.html#aeb8a294132c7a5f55d9f5152716778f6">~circularBuffer</a>()</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        free((<span class="keywordtype">void</span>*)buffer);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>};</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#endif </span><span class="comment">// !_CIRCULARBUFFER_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">   12</a></span>    <a class="code hl_enumvalue" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">CBUF_OVERWRITE</a>  = 0,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a>       = 1</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">   15</a></span>}<a class="code hl_typedef" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classcircular_buffer.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classcircular_buffer.html">circularBuffer</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    T* buffer; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> capacity; </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> length; </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_typedef" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a> writeMode; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> rdPtr; </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> rdPtrTemp; </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> rdCounter; </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> wrPtr; </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> incrementPtr(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>&amp; ptr)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (capacity - (ptr) &gt; 1) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            ptr++;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            ptr = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a31cb154026a04d8ba6c95e7e39c1881a">   49</a></span>    <a class="code hl_function" href="classcircular_buffer.html#a31cb154026a04d8ba6c95e7e39c1881a">circularBuffer</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> bufferCapacity, <a class="code hl_typedef" href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a> bufferWriteMode)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        buffer      = (T*) malloc(<span class="keyword">sizeof</span>(T) * bufferCapacity);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        capacity    = bufferCapacity;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        length      = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        writeMode   = bufferWriteMode;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        rdPtr       = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        rdPtrTemp   = 0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        rdCounter   = 0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        wrPtr       = 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#aa6e3feee15a2cb87fb8f75301ea3e039">   65</a></span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classcircular_buffer.html#aa6e3feee15a2cb87fb8f75301ea3e039">getCapacity</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> capacity;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a65b6b922b1c2cafb0bb3cbe43fa2cdf7">   74</a></span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classcircular_buffer.html#a65b6b922b1c2cafb0bb3cbe43fa2cdf7">getLength</a>()</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> length;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">   83</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">isEmpty</a>() {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> (length == 0) ? 1 : 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#afaa738654aeeef32eb9b47d8e536e4e3">   92</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcircular_buffer.html#afaa738654aeeef32eb9b47d8e536e4e3">insertData</a>(<span class="keyword">const</span> T* dataPtr)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">if</span> (length == capacity) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">if</span> (writeMode == <a class="code hl_enumvalue" href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a>) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            incrementPtr(rdPtrTemp);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (rdCounter == 0) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                rdPtr = rdPtrTemp;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            length++;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        buffer[wrPtr] = *dataPtr;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        incrementPtr(wrPtr);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a50f44da2d5378fc3c7fb9b1fad9b8a05">  118</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcircular_buffer.html#a50f44da2d5378fc3c7fb9b1fad9b8a05">readData</a>(T* dataPtr)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">isEmpty</a>()) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        *dataPtr = buffer[rdPtr];</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span> (++rdCounter == length) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <a class="code hl_function" href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">resetRead</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            incrementPtr(rdPtr);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">  137</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">resetRead</a>()</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        rdPtr = rdPtrTemp;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        rdCounter = 0;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#a293d159233004fca34c87e306dddd236">  149</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcircular_buffer.html#a293d159233004fca34c87e306dddd236">readRemoveData</a>(T* dataPtr)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">isEmpty</a>()) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rdPtr != rdPtrTemp) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">return</span> -2;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        *dataPtr == buffer[rdPtr];</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        incrementPtr(rdPtr);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        rdPtrTemp = rdPtr;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">if</span> (--length == 0) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classcircular_buffer.html#aeb8a294132c7a5f55d9f5152716778f6">  166</a></span>    <a class="code hl_function" href="classcircular_buffer.html#aeb8a294132c7a5f55d9f5152716778f6">~circularBuffer</a>()</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        free((<span class="keywordtype">void</span>*)buffer);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>};</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="ttc" id="acircular_buffer_8h_html_a0a530ca3ac809a703c14e8e8c349aeee"><div class="ttname"><a href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a></div><div class="ttdeci">enum _CIRCULARBUFFER_OPMODE circularBufferWriteMode</div><div class="ttdoc">One of the two possible writing modes to a circularBuffer.</div></div>
-<div class="ttc" id="acircular_buffer_8h_html_a7702f4afe06244a0600711520cae3551"><div class="ttname"><a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">_CIRCULARBUFFER_OPMODE</a></div><div class="ttdeci">_CIRCULARBUFFER_OPMODE</div><div class="ttdoc">One of the two possible writing modes to a circularBuffer.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00010">circularBuffer.h:10</a></div></div>
-<div class="ttc" id="acircular_buffer_8h_html_a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11"><div class="ttname"><a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a></div><div class="ttdeci">@ CBUF_FILL</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00013">circularBuffer.h:12</a></div></div>
-<div class="ttc" id="acircular_buffer_8h_html_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464"><div class="ttname"><a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">CBUF_OVERWRITE</a></div><div class="ttdeci">@ CBUF_OVERWRITE</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00011">circularBuffer.h:11</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html"><div class="ttname"><a href="classcircular_buffer.html">circularBuffer</a></div><div class="ttdoc">Circular buffer class containing the data buffer itself in addition to metadata about it.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00020">circularBuffer.h:20</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_a14dbd0de1f535534631899fbe36993e6"><div class="ttname"><a href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">circularBuffer::isEmpty</a></div><div class="ttdeci">bool isEmpty()</div><div class="ttdoc">Returns 1 if the buffer is empty.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00081">circularBuffer.h:81</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_a293d159233004fca34c87e306dddd236"><div class="ttname"><a href="classcircular_buffer.html#a293d159233004fca34c87e306dddd236">circularBuffer::readRemoveData</a></div><div class="ttdeci">int readRemoveData(T *dataPtr)</div><div class="ttdoc">Copies a data point from the buffer and removes it from the buffer. Also increments the internal read...</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00147">circularBuffer.h:147</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_a31cb154026a04d8ba6c95e7e39c1881a"><div class="ttname"><a href="classcircular_buffer.html#a31cb154026a04d8ba6c95e7e39c1881a">circularBuffer::circularBuffer</a></div><div class="ttdeci">circularBuffer(unsigned long bufferCapacity, circularBufferWriteMode bufferWriteMode)</div><div class="ttdoc">Constructor to initialize the circular buffer object.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00047">circularBuffer.h:47</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_a50f44da2d5378fc3c7fb9b1fad9b8a05"><div class="ttname"><a href="classcircular_buffer.html#a50f44da2d5378fc3c7fb9b1fad9b8a05">circularBuffer::readData</a></div><div class="ttdeci">int readData(T *dataPtr)</div><div class="ttdoc">Copies a data point from the buffer and increments the internal read pointer without deleting the dat...</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00116">circularBuffer.h:116</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_a65b6b922b1c2cafb0bb3cbe43fa2cdf7"><div class="ttname"><a href="classcircular_buffer.html#a65b6b922b1c2cafb0bb3cbe43fa2cdf7">circularBuffer::getLength</a></div><div class="ttdeci">unsigned long getLength()</div><div class="ttdoc">Returns the number of elements/length of data currently being stored in the circular buffer.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00072">circularBuffer.h:72</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_aa6e3feee15a2cb87fb8f75301ea3e039"><div class="ttname"><a href="classcircular_buffer.html#aa6e3feee15a2cb87fb8f75301ea3e039">circularBuffer::getCapacity</a></div><div class="ttdeci">unsigned long getCapacity()</div><div class="ttdoc">Returns the total number of elements/capacity of the circular buffer.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00063">circularBuffer.h:63</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_ab9952e51495cb11a2b23733aae02bc2d"><div class="ttname"><a href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">circularBuffer::resetRead</a></div><div class="ttdeci">void resetRead()</div><div class="ttdoc">Resets the internal read pointer back to the oldest data point and internal read counter.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00135">circularBuffer.h:135</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_aeb8a294132c7a5f55d9f5152716778f6"><div class="ttname"><a href="classcircular_buffer.html#aeb8a294132c7a5f55d9f5152716778f6">circularBuffer::~circularBuffer</a></div><div class="ttdeci">~circularBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00164">circularBuffer.h:164</a></div></div>
-<div class="ttc" id="aclasscircular_buffer_html_afaa738654aeeef32eb9b47d8e536e4e3"><div class="ttname"><a href="classcircular_buffer.html#afaa738654aeeef32eb9b47d8e536e4e3">circularBuffer::insertData</a></div><div class="ttdeci">int insertData(const T *dataPtr)</div><div class="ttdoc">Inserts a data item into the buffer if it isn't at capacity. If it is, it can overwrite data if the b...</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00090">circularBuffer.h:90</a></div></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#endif </span><span class="comment">// !_CIRCULARBUFFER_H</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="ttc" id="acircular_buffer_8h_html_a0a530ca3ac809a703c14e8e8c349aeee"><div class="ttname"><a href="circular_buffer_8h.html#a0a530ca3ac809a703c14e8e8c349aeee">circularBufferWriteMode</a></div><div class="ttdeci">enum _CIRCULARBUFFER_OPMODE circularBufferWriteMode</div><div class="ttdoc">One of the two possible writing modes to a circularBuffer object.</div></div>
+<div class="ttc" id="acircular_buffer_8h_html_a7702f4afe06244a0600711520cae3551"><div class="ttname"><a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551">_CIRCULARBUFFER_OPMODE</a></div><div class="ttdeci">_CIRCULARBUFFER_OPMODE</div><div class="ttdoc">One of the two possible writing modes to a circularBuffer object.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00010">circularBuffer.h:10</a></div></div>
+<div class="ttc" id="acircular_buffer_8h_html_a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11"><div class="ttname"><a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551a61282d6c2f38403c4d18cd343145de11">CBUF_FILL</a></div><div class="ttdeci">@ CBUF_FILL</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00015">circularBuffer.h:14</a></div></div>
+<div class="ttc" id="acircular_buffer_8h_html_a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464"><div class="ttname"><a href="circular_buffer_8h.html#a7702f4afe06244a0600711520cae3551aa1c5528fd0e0e0bf66d204c1cdf9e464">CBUF_OVERWRITE</a></div><div class="ttdeci">@ CBUF_OVERWRITE</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00012">circularBuffer.h:12</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html"><div class="ttname"><a href="classcircular_buffer.html">circularBuffer</a></div><div class="ttdoc">Circular buffer class containing the data buffer itself in addition to metadata about it.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00022">circularBuffer.h:22</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_a14dbd0de1f535534631899fbe36993e6"><div class="ttname"><a href="classcircular_buffer.html#a14dbd0de1f535534631899fbe36993e6">circularBuffer::isEmpty</a></div><div class="ttdeci">bool isEmpty()</div><div class="ttdoc">Returns 1 if the buffer is empty.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00083">circularBuffer.h:83</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_a293d159233004fca34c87e306dddd236"><div class="ttname"><a href="classcircular_buffer.html#a293d159233004fca34c87e306dddd236">circularBuffer::readRemoveData</a></div><div class="ttdeci">int readRemoveData(T *dataPtr)</div><div class="ttdoc">Copies a data point from the buffer and removes it from the buffer. Also increments the internal read...</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00149">circularBuffer.h:149</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_a31cb154026a04d8ba6c95e7e39c1881a"><div class="ttname"><a href="classcircular_buffer.html#a31cb154026a04d8ba6c95e7e39c1881a">circularBuffer::circularBuffer</a></div><div class="ttdeci">circularBuffer(unsigned long bufferCapacity, circularBufferWriteMode bufferWriteMode)</div><div class="ttdoc">Constructor to initialize the circular buffer object.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00049">circularBuffer.h:49</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_a50f44da2d5378fc3c7fb9b1fad9b8a05"><div class="ttname"><a href="classcircular_buffer.html#a50f44da2d5378fc3c7fb9b1fad9b8a05">circularBuffer::readData</a></div><div class="ttdeci">int readData(T *dataPtr)</div><div class="ttdoc">Copies a data point from the buffer and increments the internal read pointer without deleting the dat...</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00118">circularBuffer.h:118</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_a65b6b922b1c2cafb0bb3cbe43fa2cdf7"><div class="ttname"><a href="classcircular_buffer.html#a65b6b922b1c2cafb0bb3cbe43fa2cdf7">circularBuffer::getLength</a></div><div class="ttdeci">unsigned long getLength()</div><div class="ttdoc">Returns the number of elements/length of data currently being stored in the circular buffer.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00074">circularBuffer.h:74</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_aa6e3feee15a2cb87fb8f75301ea3e039"><div class="ttname"><a href="classcircular_buffer.html#aa6e3feee15a2cb87fb8f75301ea3e039">circularBuffer::getCapacity</a></div><div class="ttdeci">unsigned long getCapacity()</div><div class="ttdoc">Returns the total number of elements/capacity of the circular buffer.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00065">circularBuffer.h:65</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_ab9952e51495cb11a2b23733aae02bc2d"><div class="ttname"><a href="classcircular_buffer.html#ab9952e51495cb11a2b23733aae02bc2d">circularBuffer::resetRead</a></div><div class="ttdeci">void resetRead()</div><div class="ttdoc">Resets the internal read pointer back to the oldest data point and internal read counter.</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00137">circularBuffer.h:137</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_aeb8a294132c7a5f55d9f5152716778f6"><div class="ttname"><a href="classcircular_buffer.html#aeb8a294132c7a5f55d9f5152716778f6">circularBuffer::~circularBuffer</a></div><div class="ttdeci">~circularBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00166">circularBuffer.h:166</a></div></div>
+<div class="ttc" id="aclasscircular_buffer_html_afaa738654aeeef32eb9b47d8e536e4e3"><div class="ttname"><a href="classcircular_buffer.html#afaa738654aeeef32eb9b47d8e536e4e3">circularBuffer::insertData</a></div><div class="ttdeci">int insertData(const T *dataPtr)</div><div class="ttdoc">Inserts a data item into the buffer if it isn't at capacity. If it is, it can overwrite data if the b...</div><div class="ttdef"><b>Definition:</b> <a href="circular_buffer_8h_source.html#l00092">circularBuffer.h:92</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
